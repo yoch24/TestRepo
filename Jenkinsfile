@@ -1,5 +1,5 @@
 pipeline {
-  agent any
+  agent none
   stages {
     stage('Build') {
       parallel {
@@ -8,7 +8,7 @@ pipeline {
             bat(returnStatus: true, returnStdout: true, script: 'test.bat')
           }
         }
-        stage('') {
+        stage('test') {
           steps {
             sh 'test.sh'
           }
