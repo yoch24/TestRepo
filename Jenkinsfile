@@ -1,19 +1,25 @@
-pipeline {
-  agent none
-  stages {
-    stage('Build') {
-      parallel {
-        stage('Build') {
-          steps {
-            bat(returnStatus: true, returnStdout: true, script: 'test.bat')
-          }
+pipeline
+{
+    agent none
+    stages {
+        stage('Build') { 
+            steps {
+                echo "Build done..!!"
+            }
         }
-        stage('test') {
-          steps {
-            sh 'test.sh'
-          }
+        stage('Post Build') {
+            parallel{
+                stage('Test') { 
+                    steps {
+                        echo "Testing done..!!"
+                    }
+                }
+                stage('Deploy') { 
+                    steps {
+                        echo "Deployment done..!!"
+                    }
+                }
+            }
         }
-      }
     }
-  }
 }
