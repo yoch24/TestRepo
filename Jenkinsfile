@@ -23,7 +23,7 @@ pipeline {
     }
     stage('Report') {
       steps {
-        bat 'test.bat'
+        bat 'https://github.com/yoch24/YoTestRepo/blob/master/test.bat'
       }
     }
   }
