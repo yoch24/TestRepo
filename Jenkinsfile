@@ -24,6 +24,7 @@ pipeline {
     stage('Report') {
       steps {
         bat 'https://github.com/yoch24/YoTestRepo/blob/master/test.bat'
+        node(label: 'master')
       }
     }
   }
