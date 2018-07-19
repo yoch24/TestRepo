@@ -1,5 +1,6 @@
 pipeline {
   agent none
+  git url : https://github.com/yoch24/YoTestRepo.git
   stages {
     stage('Build') {
       steps {
@@ -23,7 +24,7 @@ pipeline {
     }
     stage('Report') {
       steps {
-        bat 'https://github.com/yoch24/YoTestRepo/blob/master/test.bat'
+        bat 'test.bat'
         node(label: 'master')
       }
     }
