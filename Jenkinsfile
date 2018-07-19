@@ -23,7 +23,7 @@ pipeline {
     }
     stage('Report') {
       steps {
-        emailext(subject: 'Build Report', body: 'Test mail', to: 'h2sfef@ugs.com')
+        bat 'test.bat'
       }
     }
   }
