@@ -1,11 +1,9 @@
 pipeline {
   agent { label : master}
-  git url : https://github.com/yoch24/YoTestRepo.git
   stages {
     stage('Build') {
       steps {
         echo 'Build done..!!'
-        sleep 10
       }
     }
     stage('Post Build') {
