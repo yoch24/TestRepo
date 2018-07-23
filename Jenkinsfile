@@ -20,7 +20,6 @@ pipeline {
         }
       }
     }
-    agent { label: 'master'}
     stage('Report') {
       steps {
         bat 'D:/Repository/src/Build/test.bat'
