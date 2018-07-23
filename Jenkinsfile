@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Test') {
           steps {
-            readTrusted 'D:\\Repository\\src\\Build\\temp.pl'
+            readTrusted 'temp.pl'
           }
         }
       }
