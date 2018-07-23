@@ -13,7 +13,7 @@ pipeline {
     }
     stage('PostBuild') {
       steps {
-        readFile 'temp.pl'
+        readFile 'D:\\Repository\\src\\Build\\temp.pl'
       }
     }
     stage('Deploy') {
