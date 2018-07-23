@@ -12,17 +12,8 @@ pipeline {
       }
     }
     stage('PostBuild') {
-      parallel {
-        stage('PostBuild') {
-          steps {
-            readFile 'D:\\Repository\\src\\Build\\test.bat'
-          }
-        }
-        stage('Test') {
-          steps {
-            readTrusted 'temp.pl'
-          }
-        }
+      steps {
+        readFile 'temp.pl'
       }
     }
     stage('Deploy') {
