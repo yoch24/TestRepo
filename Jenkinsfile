@@ -12,8 +12,17 @@ pipeline {
       }
     }
     stage('PostBuild') {
-      steps {
-        bat 'D:\\Repository\\src\\Build\\test.bat'
+      parallel {
+        stage('PostBuild') {
+          steps {
+            bat 'D:\\Repository\\src\\Build\\test.bat'
+          }
+        }
+        stage('Test') {
+          steps {
+            load 'D:\\Repository\\src\\Build\\temp.pl'
+          }
+        }
       }
     }
     stage('Deploy') {
