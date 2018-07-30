@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Test') {
           steps {
-            load 'D:\\Repository\\src\\Build\\temp.pl'
+            libraryResource 'D:\\Repository\\src\\Build\\temp.pl'
           }
         }
       }
