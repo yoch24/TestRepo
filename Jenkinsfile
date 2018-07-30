@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Test') {
           steps {
-            libraryResource 'D:\\Repository\\src\\Build\\temp.pl'
+            bat 'D:\\Repository\\src\\Build\\test.bat'
           }
         }
       }
