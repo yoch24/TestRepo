@@ -1,7 +1,7 @@
 pipeline {
   agent {
     node {
-      label 'master'
+      label 'TEST_461v0'
     }
 
   }
@@ -12,8 +12,17 @@ pipeline {
       }
     }
     stage('PostBuild') {
-      steps {
-        bat 'D:\\Repository\\src\\Build\\test.bat'
+      parallel {
+        stage('PostBuild') {
+          steps {
+            bat 'D:\\Repository\\src\\Build\\test.bat'
+          }
+        }
+        stage('Test461') {
+          steps {
+            bat 'G:\\workdir\\buildconfig\\test.bat'
+          }
+        }
       }
     }
     stage('Deploy') {
