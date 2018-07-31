@@ -20,7 +20,6 @@ pipeline {
         }
         stage('Test461') {
           steps {
-            node(label: 'TEST_461v0')
             echo 'On node machine'
           }
         }
