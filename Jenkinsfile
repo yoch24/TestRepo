@@ -19,15 +19,14 @@ pipeline {
           }
         }
         stage('Test461') {
-          steps {
             node(label 'TEST_461v0') {
+              steps {
                 dir(path: 'D:\\Repository\\YoTestRepo\\src\\build') {
                   bat 'test.bat'
                 }
-             }
-            echo 'Node branch'
-          }
-        }
+              }
+            }
+         }
       }
     }
     stage('Deploy') {
