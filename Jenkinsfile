@@ -1,7 +1,7 @@
 pipeline {
   agent {
     node {
-      label 'TEST_461v0'
+      label 'master'
     }
 
   }
@@ -20,7 +20,8 @@ pipeline {
         }
         stage('Test461') {
           steps {
-            bat 'G:\\workdir\\buildconfig\\test.bat'
+              node { label 'TEST_461v0' }
+              bat 'G:\\workdir\\buildconfig\\test.bat'
           }
         }
       }
