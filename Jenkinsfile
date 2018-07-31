@@ -20,7 +20,9 @@ pipeline {
         }
         stage('Test461') {
           steps {
-              node { label 'TEST_461v0' }
+              node { 
+                label 'TEST_461v0' 
+              }
               bat 'G:\\workdir\\buildconfig\\test.bat'
           }
         }
