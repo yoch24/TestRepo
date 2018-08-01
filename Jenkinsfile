@@ -20,13 +20,9 @@ pipeline {
         }
         stage('Test461') {
             steps {
-              node(label 'master')
-              dir(path 'D:\\Repository\\YoTestRepo\\src\\build') {
-                bat 'test.bat'
-              }
+               echo 'Build Done..!!'
             }
-          
-        }
+         }
       }
     }
     stage('Deploy') {
