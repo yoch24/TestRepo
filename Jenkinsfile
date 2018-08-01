@@ -19,12 +19,11 @@ pipeline {
           }
         }
         stage('Test461') {
-           
-                steps {
-                   echo 'Test node'
-                }
-             
-         }
+          steps {
+            echo 'Test node'
+            node(label: 'TEST_461v0')
+          }
+        }
       }
     }
     stage('Deploy') {
