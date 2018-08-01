@@ -22,7 +22,7 @@ pipeline {
              steps {
                     bat 'D:\\Repository\\YoTestRepo\\src\\build\\test.bat'
                }
-             }
+             
            }
        }
     }
