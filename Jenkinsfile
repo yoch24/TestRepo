@@ -19,8 +19,10 @@ pipeline {
           }
         }
         stage('Test461') {
-          steps {
-            bat 'D:\\Repository\\YoTestRepo\\src\\build\\test.bat'
+          node(label 'TEST_461v0') { 
+            steps {
+              bat 'D:\\Repository\\YoTestRepo\\src\\build\\test.bat'
+            }
           }
         }
       }
