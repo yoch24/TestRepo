@@ -19,11 +19,14 @@ pipeline {
           }
         }
         stage('Test461') {
-          steps {
-            node(label: 'TEST_461v0')
-            echo 'Test node'
-          }
-        }
+            node {
+                label 'TEST_461v0'
+                customWorkspace 'D:\\Repository\\YoTestRepo\\src\\build'
+                steps {
+                   echo 'Test node'
+                }
+             }
+         }
       }
     }
     stage('Deploy') {
