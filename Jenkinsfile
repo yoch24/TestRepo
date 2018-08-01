@@ -18,13 +18,12 @@ pipeline {
             bat 'D:\\Repository\\src\\Build\\test.bat'
           }
         }
-         stage('Test461') {
-             steps {
-                    bat 'D:\\Repository\\YoTestRepo\\src\\build\\test.bat'
-               }
-             
-           }
-       }
+        stage('Test461') {
+          steps {
+            bat 'D:\\Repository\\YoTestRepo\\src\\build\\test.bat'
+          }
+        }
+      }
     }
     stage('Deploy') {
       steps {
